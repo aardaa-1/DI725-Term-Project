@@ -8,12 +8,10 @@ Does adding textual information improve remote sensing image classification perf
 
 ## Project Summary
 
-This project investigates whether textual information improves remote sensing image classification performance. A FLAVA-based multimodal transformer is used to compare two experimental settings:
+This project investigates whether textual information improves remote sensing image classification performance. A FLAVA based multimodal transformer is used to compare two experimental settings:
 
-1. Image only classification baseline
-2. Image+text multimodal classification
-
-The main goal of Phase 2 is to obtain preliminary benchmarking results and compare both settings using classification metrics and inference speed.
+1. "Image Only" classification baseline
+2. "Image + Text" multimodal classification model
 
 ## Dataset
 
@@ -42,44 +40,68 @@ The dataset contains true color remote sensing images, segmentation masks, and g
 
 ## Data Leakage Prevention
 
-In Phase 1, the `hybrid_gemma3-4b` caption column was initially used. However, this column contains explicit class percentage information, which may cause data leakage.
+In Phase 1, the `hybrid_gemma3-4b` caption column was initially used. However, this column contains explicit class percentage information, which may cause data leakage because the text can directly reveal the target class.
 
-For Phase 2, caption columns containing explicit class percentages are avoided. The selected text column is:
+For Phase 2, caption columns containing explicit class percentages are avoided. The selected text column for the main Phase 2 benchmark is:
 
 ```text
 vision_qwen3-vl-8b
 ```
 
-This helps make the image+text experiment more reliable for evaluating whether textual descriptions improve classification performance.
+A leakage check is included in the notebook to compare caption columns and verify that the selected Phase 2 text column does not contain explicit percentage-based class information.
 
 ## Phase 2 Benchmark Setup
 
-For Phase 2, the benchmark is conducted on the three dominant classes:
+For Phase 2, the main benchmark is conducted on the three dominant classes:
 
- Grass
- Tree
- Crop
+- Grass
+- Tree
+- Crop
 
-This provides a controlled preliminary benchmark while reducing instability caused by rare classes. The full 7class classification setup is planned for Phase 3 with class imbalance handling and additional ablation experiments.
+This setup uses 9,543 samples from the full dataset pool and avoids the earlier random 1000 sample subset. It provides a controlled preliminary benchmark while reducing instability caused by very rare dominant classes.
+
+## Models
+
+The Phase 2 experiments compare two FLAVA based models:
+
+1. "Image Only" baseline  
+   - Uses only image inputs.
+   - Serves as the baseline model.
+
+2. "Image + Text" fusion model  
+   - Uses image, text, and multimodal FLAVA representations.
+   - Uses  textual descriptions as additional input.
+
+Both models are trained and evaluated using the same train, validation, and test splits.
 
 ## Metrics
 
-The experiments will compare image only and image+text models using:
+The experiments compare the models using:
 
 - Accuracy
 - Macro F1 score
 - Weighted F1 score
-- Per-class classification metrics
+- Per class precision, recall, and F1 score
 - Confusion matrix
-- Inference speed
+- Inference time
+- Samples per second
+- Milliseconds per sample
 
-Inference speed is included to evaluate the computational cost of adding textual information to the image only baseline.
+Macro F1 score is emphasized because the dataset is imbalanced and macro F1 gives equal importance to each class.
+
+## Main Phase 2 Findings
+
+In the controlled top 3 benchmark, the "Image Only" and "Image + Text" models achieved very similar test performance.
+
+The "Image + Text" model achieved slightly higher test accuracy and weighted F1 score, while the "Image Only" model achieved slightly higher macro F1 score. The inference speed comparison showed that adding text increased computational cost.
+
+Overall, Phase 2 suggests that textual descriptions provide comparable predictive performance, but they do not yet provide a clear improvement over the image only baseline relative to their additional inference cost.
 
 ## Experiment Tracking
 
-GitHub is used for version control of the codebase.
+GitHub is used for code version control and reproducibility.
 
-Weights & Biases is configured as optional experiment tracking. It is disabled by default in the notebook to avoid login or permission issues during execution.
+Weights & Biases is configured as optional experiment tracking in the notebook. It may be disabled before final submission to avoid login or permission issues when the notebook is rerun.
 
 ## Repository Structure
 
@@ -114,8 +136,10 @@ notebooks/phase1/DI725_TermProject_Phase1.ipynb
 notebooks/phase2/DI725_TermProject_Phase2.ipynb
 ```
 
+4. For Phase 2, run the notebook from top to bottom. The Phase 1 PoC cells are kept unchanged, and the Phase 2 improvements start under the "PHASE 2" section.
+
 ## Notes
 
-The dataset, model checkpoints, and large output files are intentionally excluded from this repository.
+The dataset, model checkpoints, trained weights, W&B local logs, and large output files are intentionally excluded from this repository.
 
 This repository is used to track the project code, configuration, documentation, and reproducibility files.

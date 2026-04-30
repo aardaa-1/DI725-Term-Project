@@ -42,12 +42,12 @@ The dataset contains true color remote sensing images, segmentation masks, and g
 
 ## Data Leakage Prevention
 
-In Phase 1, the `hybrid_gemma3 4b` caption column was initially used. However, this column contains explicit class percentage information, which may cause data leakage.
+In Phase 1, the `hybrid_gemma3-4b` caption column was initially used. However, this column contains explicit class percentage information, which may cause data leakage.
 
 For Phase 2, caption columns containing explicit class percentages are avoided. The selected text column is:
 
 ```text
-vision_qwen3 vl 8b
+vision_qwen3-vl-8b
 ```
 
 This helps make the image+text experiment more reliable for evaluating whether textual descriptions improve classification performance.
@@ -56,9 +56,9 @@ This helps make the image+text experiment more reliable for evaluating whether t
 
 For Phase 2, the benchmark is conducted on the three dominant classes:
 
-  Grass
-  Tree
-  Crop
+  -Grass
+  -Tree
+  -Crop
 
 This provides a controlled preliminary benchmark while reducing instability caused by rare classes. The full 7 class classification setup is planned for Phase 3 with class imbalance handling and additional ablation experiments.
 
@@ -66,12 +66,12 @@ This provides a controlled preliminary benchmark while reducing instability caus
 
 The experiments will compare image only and image+text models using:
 
-  Accuracy
-  Macro F1 score
-  Weighted F1 score
-  Per class classification metrics
-  Confusion matrix
-  Inference speed
+  -Accuracy
+  -Macro F1 score
+  -Weighted F1 score
+  -Per class classification metrics
+  -Confusion matrix
+  -Inference speed
 
 Inference speed is included to evaluate the computational cost of adding textual information to the image only baseline.
 
@@ -96,7 +96,7 @@ DI725 Term Project/
 1. Install dependencies:
 
 ```bash
-pip install  r requirements.txt
+pip install -r requirements.txt
 ```
 
 2. Make sure the dataset is available in the configured Google Drive path.

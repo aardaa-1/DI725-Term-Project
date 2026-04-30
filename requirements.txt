@@ -1,0 +1,12 @@
+torch
+torchvision
+transformers
+datasets
+accelerate
+evaluate
+wandb
+numpy
+pandas
+scikit-learn
+matplotlib
+Pillow

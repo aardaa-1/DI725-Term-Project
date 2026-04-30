@@ -84,8 +84,15 @@ GitHub is used for version control of the codebase.
 ## Repository Structure
 
 ```text
-DI725 Term Project/
-├── DI725_TermProject_2740926_Notebook.ipynb
+DI725-Term-Project/
+├── notebooks/
+│   ├── phase1/
+│   │   └── DI725_TermProject_Phase1.ipynb
+│   └── phase2/
+│       └── DI725_TermProject_Phase2.ipynb
+├── reports/
+│   ├── phase1/
+│   └── phase2/
 ├── README.md
 ├── requirements.txt
 └── .gitignore

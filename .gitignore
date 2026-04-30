@@ -216,3 +216,26 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# DI725 project specific ignored files
+
+# Dataset folders and files
+data/
+images/
+masks/
+captions.csv
+
+# Model checkpoints and weights
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+
+# W&B local logs
+wandb/
+
+# Large compressed files
+*.zip
+*.rar
+*.7z

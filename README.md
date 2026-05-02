@@ -91,11 +91,11 @@ Macro F1 score is emphasized because the dataset is imbalanced and macro F1 give
 
 ## Main Phase 2 Findings
 
-In the controlled top 3 benchmark, the "Image Only" and "Image + Text" models achieved very similar test performance.
+In the controlled top 3 benchmark, the "Image + Text" fusion model slightly outperformed the "Image Only" baseline.
 
-The "Image + Text" model achieved slightly higher test accuracy and weighted F1 score, while the "Image Only" model achieved slightly higher macro F1 score. The inference speed comparison showed that adding text increased computational cost.
+The "Image + Text" model achieved higher test accuracy, macro F1 score, and weighted F1 score than the "Image Only" model. However, the inference speed comparison showed that adding text increased computational cost.
 
-Overall, Phase 2 suggests that textual descriptions provide comparable predictive performance, but they do not yet provide a clear improvement over the image only baseline relative to their additional inference cost.
+Overall, Phase 2 suggests that leakage safe textual descriptions can provide a modest predictive improvement in the controlled benchmark, but this improvement should be evaluated together with the additional inference cost.
 
 ## Experiment Tracking
 
@@ -121,6 +121,7 @@ DI725-Term-Project/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
 ## How to Run
 

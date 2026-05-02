@@ -115,9 +115,6 @@ DI725-Term-Project/
 │   │   └── DI725_TermProject_Phase2_figure.ipynb
 │   ├── phase3/
 │   └── phase4/
-├── reports/
-│   └── figures/
-│       └── phase2_inference_cost_comparison_report.png
 ├── README.md
 ├── requirements.txt
 └── .gitignore

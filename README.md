@@ -112,7 +112,7 @@ DI725-Term-Project/
 │   │   └── DI725_TermProject_Phase1.ipynb
 │   ├── phase2/
 │   │   ├── DI725_TermProject_Phase2.ipynb
-│   │   └── figure_export_phase2.ipynb
+│   │   └── DI725_TermProject_Phase2_figure.ipynb
 │   ├── phase3/
 │   └── phase4/
 ├── reports/

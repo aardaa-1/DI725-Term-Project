@@ -99,19 +99,6 @@ The inference cost analysis shows that image+text models are approximately 1.8 t
 
 Weights & Biases is configured as optional experiment tracking in the notebook. 
 
-## Repository Structure
-
-```text
-DI725-Term-Project/
-├── notebooks/
-│   ├── phase1/
-│   ├── phase2/
-│   └── phase3/
-├── README.md
-├── requirements.txt
-└── .gitignore
-```
-
 ## How to Run
 
 1. Install dependencies:

@@ -64,7 +64,7 @@ Four experimental settings are evaluated:
 
 | ID | Experiment    | Description                                   |
 | -- | ------------- | --------------------------------------------- |
-| E1 | Image Only    | FLAVA image-only baseline                     |
+| E1 | Image Only    | FLAVA image only baseline                     |
 | E2 | Qwen Caption  | Image+text model using Qwen vision captions   |
 | E3 | Gemma Caption | Image+text model using Gemma vision captions  |
 | E4 | Shuffled Qwen | Image+text model using shuffled Qwen captions |

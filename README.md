@@ -107,12 +107,11 @@ DI725-Term-Project/
 │   ├── phase1/
 │   ├── phase2/
 │   └── phase3/
-│       └── DI725_TermProject_Notebook_2740926.ipynb
 ├── reports/
 │   ├── DI725_TermProjectReport__2740926.pdf
 │   └── figures/
-│       ├── fig1_per_class_f1_comparison_300dpi.png
-│       └── fig2_qualitative_examples_300dpi.png
+│       ├── fig1_per_class_f1_comparison.png
+│       └── fig2_qualitative_examples.png
 ├── README.md
 ├── requirements.txt
 └── .gitignore

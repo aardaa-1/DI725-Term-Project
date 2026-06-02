@@ -107,11 +107,6 @@ DI725-Term-Project/
 │   ├── phase1/
 │   ├── phase2/
 │   └── phase3/
-├── reports/
-│   ├── DI725_TermProjectReport__2740926.pdf
-│   └── figures/
-│       ├── fig1_per_class_f1_comparison.png
-│       └── fig2_qualitative_examples.png
 ├── README.md
 ├── requirements.txt
 └── .gitignore
